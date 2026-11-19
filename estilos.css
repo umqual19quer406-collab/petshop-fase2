@@ -1,0 +1,341 @@
+/* Inclui padding e borda nas dimensões dos elementos. */
+* {
+  box-sizing: border-box;
+}
+
+/* Aparência geral das páginas. */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #11171a;
+  background-color: #f5f7f8;
+}
+
+/* Cabeçalho com a identidade do petshop. */
+header {
+  padding: 24px;
+  color: white;
+  background-color: #145c52;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Links do menu principal. */
+header nav a {
+  color: white;
+}
+
+/* Área principal centralizada e com largura limitada. */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Imagens se ajustam ao espaço disponível. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Links no conteúdo e no rodapé. */
+main a,
+footer a {
+  color: #145c52;
+}
+
+/* Destaca o elemento selecionado pela navegação com teclado. */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #b37029;
+  outline-offset: 3px;
+}
+
+/* Informações de contato e autoria. */
+footer {
+  padding: 24px;
+  background-color: #deece6;
+}
+
+/* Limita a largura do formulário e centraliza seu conteúdo. */
+#form-agendamento {
+  max-width: 760px;
+  margin: 24px auto;
+}
+
+/* Separa visualmente os grupos de campos. */
+#form-agendamento fieldset {
+  min-width: 0;
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid #a9bcb6;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Destaca o título de cada grupo. */
+#form-agendamento legend {
+  max-width: 100%;
+  padding: 0 8px;
+  font-weight: bold;
+  color: #145c52;
+}
+
+/* Espaçamento entre os campos. */
+#form-agendamento p {
+  margin: 0 0 16px;
+}
+
+/* Coloca os rótulos acima dos campos de preenchimento. */
+#form-agendamento label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* Padroniza os campos sem ampliar radios e checkboxes. */
+#form-agendamento input:not([type="radio"]):not([type="checkbox"]),
+#form-agendamento select,
+#form-agendamento textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #697d76;
+  border-radius: 4px;
+  font: inherit;
+  color: #243238;
+  background-color: white;
+}
+
+/* Permite aumentar verticalmente a área de observações. */
+#form-agendamento textarea {
+  resize: vertical;
+}
+
+/* Mantém radios e checkboxes ao lado de seus rótulos. */
+#form-agendamento input[type="radio"] + label,
+#form-agendamento input[type="checkbox"] + label {
+  display: inline;
+  font-weight: normal;
+}
+
+#form-agendamento input[type="radio"],
+#form-agendamento input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #145c52;
+}
+
+/* Aparência do botão de confirmação. */
+#form-agendamento button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: bold;
+  color: white;
+  background-color: #145c52;
+  cursor: pointer;
+}
+
+#form-agendamento button:hover:not(:disabled) {
+  background-color: #0d443d;
+}
+
+/* Identifica o botão que ainda não está disponível. */
+#form-agendamento button:disabled {
+  color: #46534e;
+  background-color: #d8e0dc;
+  cursor: not-allowed;
+}
+
+/* Organiza os links do menu e permite quebra em telas pequenas. */
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+/* Amplia a área clicável dos links. */
+header nav a {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Destaca o link ao passar o mouse ou navegar pelo teclado. */
+header nav a:hover,
+header nav a:focus-visible {
+  color: #145c52;
+  background-color: white;
+}
+
+/* Identifica visualmente a página atual. */
+header nav a[aria-current="page"] {
+  color: #145c52;
+  background-color: white;
+  font-weight: bold;
+}
+
+/* Organiza os produtos em duas colunas de mesma largura. */
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Apresenta cada produto em um cartão. */
+.grade-produtos > article {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #a9bcb6;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.grade-produtos h3 {
+  margin-top: 0;
+  color: #145c52;
+}
+
+/* Padroniza o espaço das fotos sem cortar ou distorcer. */
+.grade-produtos img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin: 16px auto;
+}
+
+/* Em telas pequenas, apresenta um produto por linha. */
+@media (max-width: 600px) {
+  .grade-produtos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Organiza as opções de cada serviço em duas colunas. */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Apresenta cada opção em um cartão. */
+.grade-servicos > article {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #a9bcb6;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.grade-servicos h3 {
+  margin-top: 0;
+  color: #145c52;
+}
+
+/* Em telas pequenas, apresenta uma opção por linha. */
+@media (max-width: 600px) {
+  .grade-servicos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Área do carrossel na página inicial. */
+#carrossel-produtos {
+  margin: 24px 0 32px;
+  border: 1px solid #a9bcb6;
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Conteúdo de cada slide. */
+.destaque-produto {
+  padding: 24px;
+  text-align: center;
+}
+
+.destaque-produto img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+}
+
+.destaque-produto h3 {
+  color: #145c52;
+}
+
+/* Botões abaixo da imagem e do texto. */
+.controles-carrossel {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 20px 20px;
+}
+
+@media (max-width: 600px) {
+  .destaque-produto {
+    padding: 16px;
+  }
+
+  .destaque-produto img {
+    height: 220px;
+  }
+}
+
+/* Mantém a mesma tipografia com ou sem Bootstrap. */
+body {
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+header > p {
+  margin-top: 16px;
+}
+
+main > section {
+  margin-bottom: 32px;
+}

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Cadastro do cliente e do pet e solicitação de atendimento no Petshop Meu Amigo Fiel."
+    />
+
+    <title>Agendamento | Petshop Meu Amigo Fiel</title>
+
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Petshop Meu Amigo Fiel</h1>
+      <p>Produtos e cuidados para seu animal de estimação.</p>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li>
+            <a href="agendamento.html" aria-current="page"> Agendamento </a>
+          </li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Cadastro e agendamento</h2>
+
+      <p>
+        Informe os dados do tutor e do animal e escolha o atendimento. Os campos
+        indicados como obrigatórios devem ser preenchidos.
+      </p>
+
+      <p id="aviso-demonstracao">
+        Formulário acadêmico demonstrativo. Utilize dados fictícios. Nesta
+        etapa, as informações não são enviadas nem armazenadas.
+      </p>
+
+      <p>
+        Os serviços de banho e tosa são destinados a cães de pequeno porte. A
+        tele-busca está disponível para esses atendimentos.
+      </p>
+
+      <form id="form-agendamento" aria-describedby="aviso-demonstracao">
+        <!-- Dados de identificação e contato do cliente. -->
+        <fieldset>
+          <legend>Dados do cliente</legend>
+
+          <p>
+            <label for="nome-cliente">Nome completo (obrigatório):</label>
+            <input
+              type="text"
+              id="nome-cliente"
+              name="nome_cliente"
+              autocomplete="name"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="cpf">CPF — somente números (obrigatório):</label>
+            <input
+              type="text"
+              id="cpf"
+              name="cpf"
+              inputmode="numeric"
+              pattern="[0-9]{11}"
+              maxlength="11"
+              placeholder="11 dígitos, sem pontos ou traço"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="sexo-cliente">Sexo:</label>
+            <select id="sexo-cliente" name="sexo_cliente">
+              <option value="">Selecione</option>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+              <option value="nao-informado">Prefiro não informar</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="telefone">Telefone com DDD (obrigatório):</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              autocomplete="tel"
+              placeholder="Ex.: (11) 99999-9999"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="email">E-mail (obrigatório):</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="nome@exemplo.com"
+              required
+            />
+          </p>
+        </fieldset>
+
+        <!-- Endereço do cliente, também utilizado para a tele-busca. -->
+        <fieldset>
+          <legend>Endereço do cliente</legend>
+
+          <p>
+            <label for="logradouro">Logradouro (obrigatório):</label>
+            <input
+              type="text"
+              id="logradouro"
+              name="logradouro"
+              placeholder="Rua, avenida..."
+              required
+            />
+          </p>
+
+          <p>
+            <label for="numero">Número (obrigatório):</label>
+            <input
+              type="text"
+              id="numero"
+              name="numero"
+              placeholder="Número ou S/N"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="complemento">Complemento:</label>
+            <input
+              type="text"
+              id="complemento"
+              name="complemento"
+              placeholder="Apartamento, bloco..."
+            />
+          </p>
+
+          <p>
+            <label for="bairro">Bairro (obrigatório):</label>
+            <input type="text" id="bairro" name="bairro" required />
+          </p>
+
+          <p>
+            <label for="cidade">Cidade (obrigatório):</label>
+            <input type="text" id="cidade" name="cidade" required />
+          </p>
+
+          <p>
+            <label for="uf">Estado — UF (obrigatório):</label>
+            <input
+              type="text"
+              id="uf"
+              name="uf"
+              placeholder="Ex.: SP"
+              pattern="[A-Za-z]{2}"
+              maxlength="2"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="cep">CEP — somente números (obrigatório):</label>
+            <input
+              type="text"
+              id="cep"
+              name="cep"
+              inputmode="numeric"
+              autocomplete="postal-code"
+              pattern="[0-9]{8}"
+              maxlength="8"
+              required
+            />
+          </p>
+        </fieldset>
+
+        <!-- Identificação do animal. -->
+        <fieldset>
+          <legend>Dados do pet</legend>
+
+          <p>
+            <label for="nome-pet">Nome do pet (obrigatório):</label>
+            <input type="text" id="nome-pet" name="nome_pet" required />
+          </p>
+
+          <p>
+            <label for="especie">Espécie atendida:</label>
+            <select id="especie" name="especie">
+              <option value="cao">Cão</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="raca">Raça (obrigatório):</label>
+            <input
+              type="text"
+              id="raca"
+              name="raca"
+              placeholder="Informe a raça ou SRD"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="idade">Idade em meses (obrigatório):</label>
+            <input
+              type="number"
+              id="idade"
+              name="idade_meses"
+              min="0"
+              step="1"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="observacoes">Observações sobre o animal:</label>
+            <textarea
+              id="observacoes"
+              name="observacoes"
+              rows="4"
+              cols="40"
+              placeholder="Informe cuidados ou necessidades específicas."
+            ></textarea>
+          </p>
+        </fieldset>
+
+        <!-- Os radios compartilham o name para permitir uma escolha por grupo. -->
+        <fieldset>
+          <legend>Serviço desejado (obrigatório)</legend>
+
+          <p>
+            <input
+              type="radio"
+              id="servico-banho"
+              name="servico"
+              value="banho"
+              required
+            />
+            <label for="servico-banho">Banho</label>
+          </p>
+
+          <p>
+            <input
+              type="radio"
+              id="servico-tosa"
+              name="servico"
+              value="tosa"
+              required
+            />
+            <label for="servico-tosa">Tosa</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Forma de atendimento (obrigatório)</legend>
+
+          <p>
+            <input
+              type="radio"
+              id="entrega-local"
+              name="forma_atendimento"
+              value="entrega-local"
+              required
+            />
+            <label for="entrega-local">
+              Levarei e buscarei o pet no local
+            </label>
+          </p>
+
+          <p>
+            <input
+              type="radio"
+              id="tele-busca"
+              name="forma_atendimento"
+              value="tele-busca"
+              required
+            />
+            <label for="tele-busca">
+              Desejo tele-busca no endereço informado
+            </label>
+          </p>
+        </fieldset>
+
+        <!-- Data e horário são solicitados para ambas as formas de atendimento. -->
+        <fieldset>
+          <legend>Data e horário</legend>
+
+          <p>
+            <label for="data-agendamento">Data (obrigatório):</label>
+            <input
+              type="date"
+              id="data-agendamento"
+              name="data_agendamento"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="hora-agendamento">Horário (obrigatório):</label>
+            <input
+              type="time"
+              id="hora-agendamento"
+              name="hora_agendamento"
+              required
+            />
+          </p>
+        </fieldset>
+
+        <p>
+          <input
+            type="checkbox"
+            id="confirmacao"
+            name="confirmacao"
+            value="sim"
+            required
+          />
+          <label for="confirmacao">
+            Conferi os dados desta solicitação demonstrativa (obrigatório).
+          </label>
+        </p>
+
+        <!-- O comportamento de confirmação será implementado com JavaScript. -->
+        <button type="submit" disabled>Confirmar solicitação</button>
+
+        <p>
+          A confirmação será habilitada na etapa de implementação do JavaScript.
+        </p>
+      </form>
+    </main>
+
+    <footer id="contato">
+      <h2>Contato</h2>
+
+      <address>
+        E-mail demonstrativo:
+        <a href="mailto:contato@meuamigofiel.com"> contato@meuamigofiel.com </a>
+      </address>
+
+      <p>
+        <a href="index.html">Início</a> | <a href="produtos.html">Produtos</a> |
+        <a href="servicos.html">Serviços</a> |
+        <a href="agendamento.html">Agendamento</a>
+      </p>
+
+      <p>Desenvolvido por Demetrius Souza Telles — 2026.</p>
+      <p>
+        Projeto acadêmico de Fundamentos de Sistemas Web. Petshop fictício, sem
+        comercialização real.
+      </p>
+    </footer>
+  </body>
+</html>

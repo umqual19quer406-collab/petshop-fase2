@@ -8,6 +8,15 @@
       content="Conheça os produtos e serviços do Petshop Meu Amigo Fiel."
     />
     <title>Início | Petshop Meu Amigo Fiel</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="estilos.css" />
   </head>
   <body>
     <header>
@@ -19,6 +28,7 @@
           <li><a href="index.html" aria-current="page">Início</a></li>
           <li><a href="produtos.html">Produtos</a></li>
           <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="agendamento.html">Agendamento</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -31,6 +41,87 @@
           Conheça nosso catálogo de produtos para cães e gatos e nossos serviços
           de banho e tosa, com ou sem tele-busca.
         </p>
+      </section>
+
+      <!-- Carrossel de destaques do catálogo. -->
+      <section aria-labelledby="titulo-destaques">
+        <h2 id="titulo-destaques">Destaques do petshop</h2>
+
+        <div
+          id="carrossel-produtos"
+          class="carousel slide"
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Produtos em destaque"
+          data-bs-interval="false"
+        >
+          <div class="carousel-inner">
+            <!-- Apenas o primeiro slide começa com a classe active. -->
+            <div class="carousel-item active">
+              <div class="destaque-produto">
+                <img
+                  src="imagens/brinquedo-de-varinha.jpg"
+                  alt="Gato brincando com uma varinha com brinquedos pendurados"
+                />
+
+                <h3>Brincadeiras para seu gato</h3>
+                <p>Conheça nossos acessórios para diversão e conforto.</p>
+                <a href="produtos.html">Consultar produtos</a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="destaque-produto">
+                <img
+                  src="imagens/cama-pet.jpg"
+                  alt="Cachorro acomodado em uma cama acolchoada redonda"
+                />
+
+                <h3>Conforto na hora do descanso</h3>
+                <p>Uma opção de cama acolchoada para seu pet.</p>
+                <a href="produtos.html">Consultar produtos</a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="destaque-produto">
+                <img
+                  src="imagens/racao-caes.jpg"
+                  alt="Embalagem de ração seca para cães adultos"
+                />
+
+                <h3>Alimentação para seu companheiro</h3>
+                <p>Confira as opções de rações do nosso catálogo.</p>
+                <a href="produtos.html">Consultar produtos</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles associados ao identificador deste carrossel. -->
+          <div class="controles-carrossel">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              data-bs-target="#carrossel-produtos"
+              data-bs-slide="prev"
+              aria-controls="carrossel-produtos"
+              aria-label="Mostrar produto anterior"
+            >
+              Anterior
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              data-bs-target="#carrossel-produtos"
+              data-bs-slide="next"
+              aria-controls="carrossel-produtos"
+              aria-label="Mostrar próximo produto"
+            >
+              Próximo
+            </button>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -83,5 +174,10 @@
         comercialização real.
       </p>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
