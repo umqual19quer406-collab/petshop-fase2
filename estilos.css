@@ -339,3 +339,41 @@ header > p {
 main > section {
   margin-bottom: 32px;
 }
+
+/* Mantém a mensagem de erro legível abaixo dos campos. */
+#erro-agendamento {
+  color: #a11919;
+  font-weight: bold;
+}
+
+#erro-agendamento:empty {
+  display: none;
+}
+
+/* Destaca o resumo da solicitação demonstrativa. */
+#resumo-agendamento {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #a9bcb6;
+  border-radius: 8px;
+  background-color: white;
+}
+
+#resumo-agendamento h3 {
+  margin-top: 0;
+  color: #145c52;
+}
+
+#resumo-agendamento dt {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+#resumo-agendamento dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+#resumo-agendamento p {
+  margin-top: 20px;
+}
